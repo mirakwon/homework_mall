@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+
+    <!--시간나면 '준비중입니다' 랑 '전화번호 함수 넣어보기'-->
+
+
+        <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <title>원페이지쇼핑몰</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500&display=swap" rel="stylesheet">
+
+    <style>
+
+
+        .Headforest {
+            width: 100%;
+            height: auto;
+            margin: -200px 0px 230px 0px;
+        }
+
+        /*<!--랜덤이미지-->*/
+        .Bestsellers {
+            width: 750px;
+            height: 450px;
+            margin: 70px auto 950px auto;
+
+        }
+
+        /*랜덤이미지       */
+
+
+        .myitem {
+            width: 500px;
+            height: 400px;
+            background-color: green;
+            background-image: url(https://m.sallysea.com/web/product/big/20200127/9b60de704479858f9ab323a17897b662.jpg);
+            background-size: cover;
+            margin: 70px auto 70px auto;
+        }
+
+        .price {
+            font-size: 12px;
+        }
+
+        .desc {
+            width: 500px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        * {
+            font-family: 'Noto Serif KR', serif;
+        }
+
+        .order-box {
+            width: 500px;
+            margin-bottom: 40px;
+        }
+
+        .mybtn {
+            width: 100px;
+            margin: auto;
+            display: block;
+        }
+
+        .wrap {
+            margin: auto;
+            width: 500px;
+        }
+
+        .rate {
+            color: blue;
+        }
+
+        .button {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #667399;
+            border: 50px;
+            color: #f0f5f5;
+            text-align: center;
+            font-size: 15px;
+            padding: 15px;
+            width: 120px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button:hover span {
+            padding-right: 25px;
+        }
+
+        .button:hover span:after {
+            opacity: 5;
+            right: 0;
+        }
+
+        /*social media*/
+        html {
+            font-size: 20px;
+        }
+
+        body {
+            background-color: #f0f0f5;
+            padding: 0px;
+            text-align: center;
+        }
+
+        /* Wrapper */
+        .icon-button {
+            background-color: white;
+            border-radius: 3.6rem;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 2.0rem;
+            height: 3.6rem;
+            line-height: 3.6rem;
+            margin: 0 5px;
+            position: relative;
+            text-align: center;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            width: 3.6rem;
+        }
+
+        /* Circle */
+        .icon-button span {
+            border-radius: 0;
+            display: block;
+            height: 0;
+            left: 50%;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+            width: 0;
+        }
+
+        .icon-button:hover span {
+            width: 3.6rem;
+            height: 3.6rem;
+            border-radius: 3.6rem;
+            margin: -1.8rem;
+        }
+
+        .twitter span {
+            background-color: #4099ff;
+        }
+
+        .facebook span {
+            background-color: #3B5998;
+        }
+
+        .google-plus span {
+            background-color: #db5a3c;
+        }
+
+        /* Icons */
+        .icon-button i {
+            background: none;
+            color: white;
+            height: 3.6rem;
+            left: 0;
+            line-height: 3.6rem;
+            position: absolute;
+            top: 0;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+            width: 3.6rem;
+            z-index: 10;
+        }
+
+        .icon-button .icon-twitter {
+            color: #4099ff;
+        }
+
+        .icon-button .icon-facebook {
+            color: #3B5998;
+        }
+
+        .icon-button .icon-google-plus {
+            color: #db5a3c;
+        }
+
+        .icon-button:hover .icon-twitter,
+        .icon-button:hover .icon-facebook,
+        .icon-button:hover .icon-google-plus {
+            color: white;
+        }
+
+        /*social media*/
+
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        h1 {
+            font-size: 50px;
+            text-align: -webkit-right;
+            border-bottom: 2px solid #f0f5f5;
+            margin: 0;
+            padding: 20px;
+            position: relative;
+            font-family: 'Noto Serif KR', serif;
+
+        }
+
+        th {
+            background-color: #e8ebee;
+            color: #667398;
+            width: 450px;
+        }
+
+        /* follow me template */
+        .made-with-love {
+            margin-top: 40px;
+            padding: 10px;
+            clear: left;
+            text-align: center;
+            font-size: 24px;
+            font-family: 'Noto Serif KR', serif;
+            color: #ffffff;
+
+        }
+
+        .made-with-love i {
+            font-style: normal;
+            color: #e8578a;
+            font-size: 24x;
+            position: relative;
+            top: 2px;
+        }
+
+
+    </style>
+    <script>
+
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: "https://api.manana.kr/exchange/rate.json",
+                data: {},
+                success: function (response) {
+                    let nowRate = response[1]['rate'];
+                    $('#rate-box').text(nowRate)
+
+                }
+            })
+            order_listing();
+
+
+        });
+
+        function order_listing() {
+            $.ajax({
+                type: "GET",
+                url: "/order",
+                data: {},
+                success: function (response) {
+                    let orders = response['orders'];
+                    for (let i = 0; i < orders.length; i++) {
+                        let name = orders[i]['name'];
+                        let count = orders[i]['count'];
+                        let address = orders[i]['address'];
+                        let phone = orders[i]['phone'];
+
+                        let temp_html = `<tr>
+                                            <th scope="row">${name}</th>
+                                            <td>${count}</td>
+                                            <td>${address}</td>
+                                            <td>${phone}</td>
+                                         </tr>`
+                        $('#order-table-box').append(temp_html)
+                    }
+
+                }
+            })
+        }
+
+
+        function order() {
+            let name = $('#order-name').val();
+            let count = $('#order-count').val();
+            let address = $('#order-address').val();
+            let phone = $('#order-phone').val();
+
+            if (name == '') {
+                alert('이름을 입력하세요');
+            } else if (count == '--수량을 선택하세요--') {
+                alert('수량을 입력하세요');
+            } else if (address == '') {
+                alert('주소를 입력하세요');
+            } else if (phone == '') {
+                alert('전화번호를 입력하세요');
+            } else {
+                $.ajax({
+                    type: "POST",
+                    url: "/order",
+                    data: {'name_give': name, 'count_give': count, 'address_give': address, 'phone_give': phone},
+                    success: function (response) {
+                        if (response["result"] == "success") {
+                            alert(response["msg"]);
+                            window.location.reload();
+                        }
+                    }
+                })
+            }
+        }
+
+    </script>
+
+
+</head>
+
+<body>
+
+
+<h1 style="color: white">Forest, Ocean St</h1>
+
+<p></p>
+<!--공간 띄우기-->
+<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+    <button type="button" class="btn btn-secondary">HOME
+    </button>
+    <button type="button" class="btn btn-secondary">BEST</button>
+    <button type="button" class="btn btn-secondary">전체보기</button>
+    <button type="button" class="btn btn-secondary">새해선물추천♥</button>
+    <button type="button" class="btn btn-secondary">Candle</button>
+    <button type="button" class="btn btn-secondary">Mobile</button>
+    <button type="button" class="btn btn-secondary">Post Card</button>
+    <button type="button" class="btn btn-secondary">Wreath</button>
+    <button type="button" class="btn btn-secondary">One-day Class</button>
+    <button type="button" class="btn btn-secondary">Cart</button>
+
+    <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+            ABOUT
+        </button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+            <a class="dropdown-item" href="#">My Page</a>
+            <a class="dropdown-item" href="#">My Wishlist</a>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class="Headforest">
+    <img src="../static/forest_winter.jpg" width="100%">
+</div>
+<p></p>
+
+<h3><strong><u>Bestsellers</u></strong></h3>
+<!--랜덤-->
+<div class="Bestsellers">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100"
+                     src="https://source.unsplash.com//KDxRQFnb5bg/4000x6016"
+                     alt="First slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5><strong>Candle</strong></h5>
+                    <p>with flower candle 17.82$ </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100"
+                     src="https://source.unsplash.com//kWOCxlF8bP0/4000x6016"
+                     alt="Second slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5><strong>Wreath</strong></h5>
+                    <p>christmas wreath 20$ </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100"
+                     src="https://source.unsplash.com//Ukmn_jdiY64/4000x6016"
+                     alt="Third slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5><strong>Candle</strong></h5>
+                    <p>angle candle 10.04 $ </p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+
+<!--랜덤-->
+
+
+<h3><strong><u>Order</u></strong></h3>
+<div class="wrap">
+    <div class="myitem"></div>
+    <div class="desc">
+        <h2><strong> 하얀 조개모빌 장식</strong> <span class="price"><strong>7,900원/개</strong> </span></h2>
+        <p></p>
+        <p><strong>바다에서 보석을 찾다.</strong></p>
+        <p>바람이 불면 사선으로 돌아가는 모습이 <br> 매력적인 모빌이에요.<br>
+            천연 재료와 핸드메이드 제품으로, 조개 얼룩과 갈라짐 등이 있을 수 있으니 이점 참고해주세요!</p>
+        <!--        특정 문자열만 감싸고 싶을 때 span 태그-->
+        <p class="rate">달러-원 환율: <span id="rate-box">1,000</span></p>
+    </div>
+    <div class="order-box">
+        <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">주문자 이름</span>
+            </div>
+            <input id="order-name" type="text" class="form-control" aria-label="Small"
+                   aria-describedby="inputGroup-sizing-sm">
+        </div>
+
+        <div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">수량</label>
+                </div>
+                <select id="order-count" class="custom-select">
+                    <option selected>--수량을 선택하세요--</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+        </div>
+        <div class="order-box">
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">주소</span>
+                </div>
+                <input id="order-address" type="text" class="form-control" aria-label="Small"
+                       aria-describedby="inputGroup-sizing-sm">
+            </div>
+        </div>
+        <div class="order-box">
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">전화번호</span>
+                </div>
+                <input id="order-phone" type="text" class="form-control" aria-label="Small"
+                       aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <button class="button" style="vertical-align:middle" onClick="order()" type="button">
+                <span>주문하기 </span>
+            </button>
+
+        </div>
+
+        <!--table    -->
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">이름</th>
+                <th scope="col">수량</th>
+                <th scope="col">주소</th>
+                <th scope="col">전화번호</th>
+            </tr>
+            </thead>
+            <tbody id="order-table-box">
+            </tbody>
+        </table>
+
+
+    </div>
+
+
+    <!-- follow me template -->
+    <div class="made-with-love">
+        by Mira <i>♥</i>
+    </div>
+
+
+    <!--    social media button-->
+    <div>
+        <a href="https://twitter.com/minimalmonkey" class="icon-button twitter"><i
+                class="icon-twitter"></i><span></span></a>
+        <a href="https://facebook.com" class="icon-button facebook"><i
+                class="icon-facebook"></i><span></span></a>
+        <a href="https://www.google.com" class="icon-button google-plus"><i
+                class="icon-google-plus"></i><span></span></a>
+    </div>
+
+
+</div>
+
+
+</body>
+
+
+</html>
